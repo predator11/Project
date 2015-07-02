@@ -1,0 +1,14 @@
+package Controller;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.servlet.http.HttpServlet;
+
+import DAO.TimetableDAO;
+import Model.Timetable;
+
+public class CRUD extends HttpServlet{
+
+
+}

@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+/*=====================================================
+    
+* RuBizCSS3Modal 1.0 - Стильное CSS3 модальное окно
+
+    Автор: http://sergeychunkevich.com
+	Copyright: (c) 2015 Sergey Chunkevich
+
+=====================================================*/
+
+
+/* КНОПКА */
+
+a.RuBizCSS3Modal_button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+
+/* ОСНОВА ОКНА */
+
+.RuBizCSS3Modal {
+    background: rgba(0,0,0,0.3);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-justify-content: center;
+            justify-content: center;
+    -webkit-align-items: center;
+            align-items: center;
+    -webkit-box-align: center;
+     -webkit-box-pack: center;
+         -ms-flex-align: center;
+         -ms-flex-pack: center;
+    position: fixed;
+    overflow: scroll;
+    pointer-events: none;
+    top: 0; right: 0; bottom: 0; left: 0;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease-in;
+       -moz-transition: opacity 0.3s ease-in;
+            transition: opacity 0.3s ease-in;
+    z-index: 99999;
+}
+.RuBizCSS3Modal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* КОНТЕНТ */
+
+.RuBizCSS3Modal_content {
+    background: #fff;
+    font-family: arial, sans-serif;
+    margin: 10% auto;
+    padding: 0 20px 10px 20px;
+    position: relative;
+    max-width: 620px;
+	min-width: 320px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 0 25px rgba(0,0,0,0.3);
+       -moz-box-shadow: 0 0 25px rgba(0,0,0,0.3);
+            box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    z-index: 99998;
+}
+    .RuBizCSS3Modal_content .rb_zagolovok {
+    	background: rgba(0,0,0,0.1);
+    	color: #444;
+        margin: 0 -20px 10px -20px;
+    	padding: 0.5em 2em 0.5em 1em;
+    	text-align: center;
+    	font-size: 1.5em;
+    	font-weight: bold;
+    	border-radius: 3px 3px 0 0;
+    }
+    .RuBizCSS3Modal_content .rb_text {
+    	font-size: 19px;
+    	color: #333;
+    	margin: 0;
+    	padding: 5px 0;
+    	line-height: 27px;
+    }
+    .RuBizCSS3Modal_content img {
+        width: 100%;
+        height: auto !important;
+    }
+
+
+/* ЗАКРЫТЬ ОКНО */
+
+.o_close_RuBizCSS3Modal {
+    visibility: visible;
+    position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 99997;
+}
+.b_close_RuBizCSS3Modal {
+    background: rgba(0,0,0,0.1);
+    color: #444;
+    padding: 0.5em 0.4em;
+    font-size: 1.5em;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+	-webkit-transition: all 0.3s;
+	   -moz-transition: all 0.3s;
+	        transition: all 0.3s;
+}
+    .b_close_RuBizCSS3Modal:hover {
+        background: rgba(0,0,0,0.2);
+    }
+
+
+/* НАСТРОЙКИ ДЛЯ ВИДЕОПЛЕЕРА */
+
+.RuBizCSS3Modal_VideoArea {
+	position: relative;
+	padding-bottom: 54.4%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+    margin: 10px 0 15px 0;
+    -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.8);
+       -moz-box-shadow: 0 0 4px rgba(0,0,0,0.8);
+            box-shadow: 0 0 4px rgba(0,0,0,0.8);
+}
+    .RuBizCSS3Modal_VideoArea iframe {
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100%;
+        border: none;
+    }
+
+
+/*============================================
+    ЭФФЕКТ 1 - плавное появление из центра
+============================================*/
+
+.RuBizCSS3Modal:target .effect1 {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	   -moz-transform: scale(1);
+	    -ms-transform: scale(1);
+	        transform: scale(1);
+}
+.effect1 {
+	opacity: 0;
+	-webkit-transform: scale(0.6);
+	   -moz-transform: scale(0.6);
+	    -ms-transform: scale(0.6);
+	        transform: scale(0.6);
+	-webkit-transition: all 0.3s;
+	   -moz-transition: all 0.3s;
+	        transition: all 0.3s;
+}
+
+/*============================================
+    ЭФФЕКТ 2 - 
+============================================*/
+
+
+
+/*============================================
+    ЭФФЕКТ 3 - 
+============================================*/
+
+

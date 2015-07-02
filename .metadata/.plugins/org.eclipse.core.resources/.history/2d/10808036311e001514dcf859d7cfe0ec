@@ -1,0 +1,22 @@
+package Controller;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import DAO.TimetableDAO;
+import Model.Timetable;
+
+public class CRUD {
+
+	public static void main(String[] args) throws SQLException {
+	 TimetableDAO tmDAO = new TimetableDAO();
+	 List<Timetable> list = tmDAO.getSallers();
+	 
+	 for (Timetable tb : list){
+	 System.out.println(tb.getId() + " " + tb.getStation() + " " + tb.getFinalStation() + " " 
+	      + tb.getDepartureTime() + tb.getArrivalTime());
+	 }
+
+	}
+
+}

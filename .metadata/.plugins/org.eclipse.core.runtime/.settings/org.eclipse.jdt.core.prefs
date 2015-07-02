@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled
+org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8
+org.eclipse.jdt.core.compiler.compliance=1.8
+org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
+org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
+org.eclipse.jdt.core.compiler.source=1.8
+org.eclipse.jdt.core.userLibrary.hibernate=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<userlibrary systemlibrary\="false" version\="2">\r\n\t<archive path\="C\:/Java Library/SQLite + Hibernate/antlr-2.7.7.jar"/>\r\n\t<archive path\="C\:/Java Library/SQLite + Hibernate/dom4j-1.6.1.jar"/>\r\n\t<archive path\="C\:/Java Library/SQLite + Hibernate/hibernate-commons-annotations-4.0.1.Final.jar"/>\r\n\t<archive path\="C\:/Java Library/SQLite + Hibernate/hibernate-core-4.1.4.Final.jar"/>\r\n\t<archive path\="C\:/Java Library/SQLite + Hibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>\r\n\t<archive path\="C\:/Java Library/SQLite + Hibernate/javassist-3.15.0-GA.jar"/>\r\n\t<archive path\="C\:/Java Library/SQLite + Hibernate/jboss-logging-3.1.0.GA.jar"/>\r\n\t<archive path\="C\:/Java Library/SQLite + Hibernate/jboss-transaction-api_1.1_spec-1.0.0.Final.jar"/>\r\n\t<archive path\="C\:/Java Library/SQLite + Hibernate/SQLiteDialectByVovan.jar"/>\r\n\t<archive path\="C\:/Java Library/SQLite + Hibernate/sqlite-jdbc-3.8.7.jar"/>\r\n</userlibrary>\r\n

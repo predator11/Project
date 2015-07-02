@@ -1,0 +1,136 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="Controller.*, DAO.*, Model.*, java.util.*" %>   
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<link type="text/css" rel="stylesheet" href="rsc/css/bootstrap.css">
+
+<title>Train timetable</title>
+</head>
+<body>
+  <% TimetableDAO table = new TimetableDAO();
+       String keyWord =  request.getParameter("keyWord"); %>
+
+    <c:set var="Word" value='<%= keyWord %>'/>
+    <c:set var="check" value='<%= request.getParameter("station") %>'/>
+ 
+<div>
+	   <button type="button" class="btn btn-primary" toggle="modal" target="#modal-add">Open</button>
+	 </div>
+	 
+  <div style="margin: 0 auto; padding: 50px;"  >
+    <div style="width: 730px; height: 200 px; background: silver" class="btn-group">
+      <form method="GET" action="AppView.jsp">
+         <% keyWord = ""; %>
+           <Button class="btn btn-primary" type="Submit" >
+           <span class="glyphicon glyphicon-home"></span>Home</Button>
+           <a href="add.jsp" class="btn btn-primary">Add new railway</a>
+      </form>
+    </div>
+    <div style="overflow: auto; width: 730px; height: 250px;">
+      <table class="table table-striped">
+         <tr>
+           <th>Station:</th>
+           <th>Final Station:</th>
+           <th>Days walking</th>
+           <th>Departure time</th>
+           <th>Arrival time</th>
+           <th>Deleting</th>
+           <th>Editing</th>
+         </tr>
+        <c:forEach var="p" items="<%= table.getTables() %>">  
+           <c:choose>
+             <c:when test='${Word == null }'>
+               <tr>
+                 <th>${p.station }</th>
+                 <th>${p.finalStation }</th>
+                 <th>${p.daysOfDep }</th>
+                 <th>${p.departureTime }</th>
+                 <th>${p.arrivalTime }</th>
+               <td>
+                  <a href="CRUD?action=delete&id=${p.id }" onclick="return confirm('Are you sure?')">Delete</a>
+               </td>
+               <td>
+                   <a href="CRUD?action=edit&id=${p.id }">Edit</a>
+               </td>
+               </tr>
+              </c:when>
+             <c:when test='${Word != null }'>
+               <c:if test='${check == "StartStation" }'>
+                <c:if test='${Word == p.station }'>
+                 <tr>     
+                   <th>${p.station }</th>
+                   <th>${p.finalStation }</th>
+                   <th>${p.daysOfDep }</th>
+                   <th>${p.departureTime }</th>
+                   <th>${p.arrivalTime }</th>
+                 <td>
+                  <a href="CRUD?action=delete&id=${p.id }" onclick="return confirm('Are you sure?')">Delete</a>
+                  </td>
+                    <td>
+                     <a href="CRUD?action=edit&id=${p.id }")">Edit</a>
+                    </td>
+                 </tr>
+               </c:if>
+              </c:if>
+               <c:if test='${check == "EndStation" }'>
+                <c:if test='${Word == p.finalStation }'>
+                  <tr>     
+                      <th>${p.station }</th>
+                      <th>${p.finalStation }</th>
+                      <th>${p.daysOfDep }</th>
+                      <th>${p.departureTime }</th>
+                      <th>${p.arrivalTime }</th>
+                   <td>
+                    <a href="CRUD?action=delete&id=${p.id }" onclick="return confirm('Are you sure?')">Delete</a>
+                    </td>
+                      <td>
+                       <a href="CRUD?action=edit&id=${p.id }">Edit</a>
+                      </td>
+                 </tr>
+               </c:if>
+              </c:if>
+             </c:when>
+          </c:choose>
+        </c:forEach>
+      </table>
+    </div>
+    <div style="background: silver; width: 730px; height:100 px;">
+      Search train by:
+      <br>
+      <form method="GET" action="AppView.jsp">
+           <input type="radio" name="station" checked="checked" value="StartStation"> Station
+           <br>
+           <input type="radio" name="station" value="EndStation"> Final station
+           <br>
+           <input type="Text" name="keyWord" value="" placeholder="Enter full name">
+           <Button class="btn btn-primary btn-sm" type="Submit">Search</Button>
+      </form>
+    </div>
+ </div> 
+
+ <div class="modal" id="modal-add">
+	 <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+		    <h4>Title</h4>
+			<button class="close" type="button" dismiss="modal"></button>
+		  </div>
+		   <div class="modal-content">
+		      <p>this is modal window</p>
+		  </div>
+		  <div class="modal-footer">
+		    <button class="btn btn-danger" type="button" dismiss="modal">Cancel</button>
+		  </div>
+        </div>
+	 </div>
+ </div>
+ <script src="https://ajax.google.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+ <script src="rsc/js.bootstrap.min.js"></script>
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+</body>
+</html>

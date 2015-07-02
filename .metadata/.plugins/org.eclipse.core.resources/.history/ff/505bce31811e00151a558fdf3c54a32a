@@ -1,0 +1,63 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <form method="post" action="myServlet?action=add">
+      <table>
+       <tr>
+         <th>Станція відправлення: </th>
+         <th><input type="Text" name="St"></th>
+        </tr>
+       <tr>
+         <th>Станція прибуття: </th>
+         <th><input type="Text" name="fSt"></th>
+        </tr>
+       <tr>
+         <th>Дні хождіння</th>
+         <th><input type="Text" name="dayOfDep"></th>
+        </tr>
+       <tr>
+       <tr>
+         <th>Час відправлення</th>
+          <th> 
+          <select name="departurelHour" size=1>
+            <c:forEach var="i" begin="0" end="24">
+             <option select value="${i}" id="departureHour"> ${i }
+            </c:forEach>
+          </select>
+           <select name="departureMinute" size=1>  
+             <c:forEach var="j" begin="0" end="60">
+             <option select value="${i}" id="departureMinut"> ${i }
+            </c:forEach>
+           </select>
+          </th>
+        </tr>
+       <tr>
+       <tr>
+         <th>Час прибуття</th>
+         <th>
+          <select name="arrivalHour" size=1>
+            <c:forEach var="i" begin="0" end="24">
+             <option select value="${i}" id="departureHour"> ${i }
+            </c:forEach>
+          </select>
+           <select name="arrivalMinute" size=1>  
+             <c:forEach var="j" begin="0" end="60">
+             <option select value="${i}" id="departureMinut"> ${i }
+            </c:forEach>
+           </select>
+         </th>
+        </tr>
+       <tr>
+        <td><input type="Submit" value="Save"></td>
+       </tr>
+      </table>
+   </form>
+</body>
+</html>
